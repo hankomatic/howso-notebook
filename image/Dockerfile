@@ -1,9 +1,10 @@
 FROM jupyter/scipy-notebook
 
-# Add RUN statements to install packages as the $NB_USER defined in the base images.
+# COPY ./howso-engine-recipes/data ./data
+# COPY ./howso-engine-recipes/*.ipynb .
+# COPY ./howso-engine-recipes/*.py .
 
-# Add a "USER root" statement followed by RUN statements to install system packages using apt-get,
-# change file permissions, etc.
-
-# If you do switch to root, always be sure to add a "USER $NB_USER" command at the end of the
-# file to ensure the image runs as a unprivileged user by default.
+COPY ./requirements.txt ./requirements.txt
+RUN pip install -U pip
+RUN pip install -r ./requirements.txt
+RUN pip freeze > ./versions.txt
