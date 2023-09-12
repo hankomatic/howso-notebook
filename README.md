@@ -1,6 +1,10 @@
 # howso-notebook
 
-howso-notebook is a community maintained Jupyter Docker Stack image
+howso-notebook is a ready-to-run Jupyter Docker Stack image that includes Howso Engine and example recipes.
+
+## Run 
+
+TBD - show docker run using official images built by github.
 
 ## Development
 
